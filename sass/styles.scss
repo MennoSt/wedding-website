@@ -251,7 +251,7 @@ Navigation
 Hero
 ========================================================================== */
 .hero {
-  min-height: 1500px;
+  min-height: 750px;
   background: url('../img/MenMFull.jpg') center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -259,11 +259,11 @@ Hero
   background-size: cover;
   position: relative;
 
-  .rsvp-btn {
+/*   .rsvp-btn {
     position: absolute;
     bottom: -1030px;
     left: 35%;
-  }
+  } */
   .down-arrow a {
     color: $txt-light;
   }
