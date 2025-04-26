@@ -194,13 +194,13 @@ $(document).ready(function () {
 
             // You can also choose to set an end time
             // If an end time is set, this will take precedence over duration
-            end: new Date('Sep 5, 2025 00:00'),
+            end: new Date('Sep 6, 2025 00:00'),
 
             // Event Address
             address: 'Lokaal 55, Sneek',
 
             // Event Description
-            description: "We can't wait to see you on our big day."
+            description: "We kijken uit naar je komst!"
         }
     });
 
@@ -214,25 +214,25 @@ $(document).ready(function () {
 
         $('#alert-wrapper').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
 
-        if (MD5($('#invite_code').val()) !== 'b0e53b10c1f55ede516b240036b88f40'
-            && MD5($('#invite_code').val()) !== '2ac7f43695eb0479d5846bb38eec59cc') {
-            $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> Your invite code is incorrect.'));
-        } else {
-            $.post('https://script.google.com/macros/s/AKfycbw6WDzn3rj2cJkmLiEA2xKwGz68JM0Zz1aJ9Xdn6sN7wD1oCuGOsC9auKuUpVu3E1w6/exec', data)
-                .done(function (data) {
-                    console.log(data);
-                    if (data.result === "error") {
-                        $('#alert-wrapper').html(alert_markup('danger', data.message));
-                    } else {
-                        $('#alert-wrapper').html('');
-                        $('#rsvp-modal').modal('show');
-                    }
-                })
-                .fail(function (data) {
-                    console.log(data);
-                    $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> There is some issue with the server. '));
-                });
-        }
+        // if (MD5($('#invite_code').val()) !== 'b0e53b10c1f55ede516b240036b88f40'
+        //     && MD5($('#invite_code').val()) !== '2ac7f43695eb0479d5846bb38eec59cc') {
+        //     $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> Your invite code is incorrect.'));
+        // } else {
+        $.post('https://script.google.com/macros/s/AKfycbwQ_Q7jwH04lvzdsiQ0aub9XAX_72yErTx05VAQb_z9KAuGRZfSfEON63dVSgfqJdGE/exec', data)
+            .done(function (data) {
+                console.log(data);
+                if (data.result === "error") {
+                    $('#alert-wrapper').html(alert_markup('danger', data.message));
+                } else {
+                    $('#alert-wrapper').html('');
+                    $('#rsvp-modal').modal('show');
+                }
+            })
+            .fail(function (data) {
+                console.log(data);
+                $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> There is some issue with the server. '));
+            });
+        // }
     });
 
 });
