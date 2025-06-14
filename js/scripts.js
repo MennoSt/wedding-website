@@ -187,7 +187,7 @@ $(document).ready(function () {
             title: "Bruiloft Menno en Michelle",
 
             // Event start date
-            start: new Date('Sep 5, 2025 10:00'),
+            start: new Date('Sep 5, 2025 16:00'),
 
             // Event duration (IN MINUTES)
             // duration: 120,
@@ -218,7 +218,7 @@ $(document).ready(function () {
         //     && MD5($('#invite_code').val()) !== '2ac7f43695eb0479d5846bb38eec59cc') {
         //     $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> Your invite code is incorrect.'));
         // } else {
-        $.post('https://script.google.com/macros/s/AKfycbxvlAi3ijZDQTvaypDRYQl7VAVNzO4QIBEcQbY1qYwATmlchK4lpvNRKXzvqPhjnx8B/exec', data)
+        $.post('https://script.google.com/macros/s/AKfycbwAohzCX_PXbZWWa1GvdGY2gdKXUQDxJ16gODr7adRAc6EajwiCNhAlgdyC0ASIQHXgNQ/exec', data)
             .done(function (data) {
                 console.log(data);
                 if (data.result === "error") {
